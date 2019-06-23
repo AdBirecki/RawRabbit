@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Actio.Api.Controllers
 {
     [Route("")]
-    public class HomeController : Controller
+    public class HomeController : ControllerBase
     {
         [HttpGet("")]
         public IActionResult Get() {

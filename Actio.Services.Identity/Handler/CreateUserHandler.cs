@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Actio.Services.Identity.Handler
 {
-    public class CreateActivityHandler : ICommandHandler<CreateActivity>
+    public class CreateUserHandler : ICommandHandler<CreateActivity>
     {
         private readonly IBusClient _busClient;
 
-        public CreateActivityHandler(IBusClient busClient) {
+        public CreateUserHandler(IBusClient busClient) {
             _busClient = busClient;
         }
 

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using RawRabbit;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,8 @@ namespace Actio.Common.Services
             var config = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
                 .AddCommandLine(args)
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("hosting.json", optional: true)
                 .Build();
 
             var webHostBuilder = WebHost
@@ -55,6 +58,7 @@ namespace Actio.Common.Services
                 _webHost = webHost;
             }
 
+
             public BusBuilder UseRabbitMQ() {
                 _busClient = (IBusClient)_webHost.Services.GetService(typeof(IBusClient));
                 return new BusBuilder(_webHost, _busClient);
@@ -78,7 +82,8 @@ namespace Actio.Common.Services
             }
 
             public BusBuilder SubscribeToCommand<TCommand>() where TCommand: ICommand {
-                ICommandHandler<TCommand> handler = (ICommandHandler<TCommand>)_webHost.Services
+                ICommandHandler<TCommand> handler = (ICommandHandler<TCommand>)
+                    _webHost.Services
                     .GetService(typeof(ICommandHandler<TCommand>));
 
                 _busClient.WithCommandHandlerAsync(handler);
@@ -87,11 +92,8 @@ namespace Actio.Common.Services
 
             public BusBuilder SubscribeToEvent<TEvent>() where TEvent : IEvent
             {
-
-                IServiceProvider services = _webHost.Services;
-                object service = _webHost.Services.GetService(typeof(IEventHandler<TEvent>));
-
-                IEventHandler<TEvent> handler = (IEventHandler<TEvent>)_webHost.Services
+                IEventHandler<TEvent> handler = (IEventHandler<TEvent>)
+                    _webHost.Services
                     .GetService(typeof(IEventHandler<TEvent>));
 
                 _busClient.WithEventHandlerAsync(handler);

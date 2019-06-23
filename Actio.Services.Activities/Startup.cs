@@ -26,11 +26,13 @@ namespace Actio.Services.Activities
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRabbitMQ(Configuration);
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddScoped<ICommandHandler<CreateActivity>, CreateActivityHandler>();
+            services
+                .AddRabbitMQ(Configuration);
+            services
+                .AddTransient<ICommandHandler<CreateActivity>, CreateActivityHandler>();
             
         }
 

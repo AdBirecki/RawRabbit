@@ -9,7 +9,7 @@ using RawRabbit;
 namespace Actio.Api.Controllers
 {
     [Route("[controller]")]
-    public class ActivitiesController : Controller
+    public class ActivitiesController : ControllerBase
     {
         private readonly IBusClient _busClient;
 

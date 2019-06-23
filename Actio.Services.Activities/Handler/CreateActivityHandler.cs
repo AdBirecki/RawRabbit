@@ -18,7 +18,7 @@ namespace Actio.Services.Activities.Handler
 
         public async Task HandleAsync(CreateActivity command)
         {
-            Console.WriteLine($"Createing activity:{command.Name}");
+            Console.WriteLine($"Creating activity:{command.Name}");
 
             await _busClient.PublishAsync(
                 new ActivityCreated(

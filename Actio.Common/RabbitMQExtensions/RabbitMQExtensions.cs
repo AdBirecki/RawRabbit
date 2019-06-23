@@ -53,7 +53,7 @@ namespace Actio.Common.RabbitMQ
             });
 
             serviceCollection
-                .AddSingleton<IBusClient>(_ => client);
+                .AddSingleton<IBusClient>( item => client);
         }
     }
 }
