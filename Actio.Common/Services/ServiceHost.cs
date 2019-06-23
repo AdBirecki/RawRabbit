@@ -28,7 +28,8 @@ namespace Actio.Common.Services
                 .AddCommandLine(args)
                 .Build();
 
-            var webHostBuilder = WebHost.CreateDefaultBuilder(args)
+            var webHostBuilder = WebHost
+                .CreateDefaultBuilder(args)
                 .UseConfiguration(config)
                 .UseStartup<TStartup>();
 
@@ -37,7 +38,7 @@ namespace Actio.Common.Services
 
         public Task Run()
         {
-            throw new NotImplementedException();
+            return _webHost.RunAsync();
         }
 
 
@@ -68,28 +69,32 @@ namespace Actio.Common.Services
         public class BusBuilder : BuilderBase
         {
             private readonly IWebHost _webHost;
-            private IBusClient _busCLient;
+            private IBusClient _busClient;
 
             public BusBuilder(IWebHost webHost, IBusClient busClient)
             {
                 _webHost = webHost;
-                _busCLient = busClient;
+                _busClient = busClient;
             }
 
             public BusBuilder SubscribeToCommand<TCommand>() where TCommand: ICommand {
                 ICommandHandler<TCommand> handler = (ICommandHandler<TCommand>)_webHost.Services
                     .GetService(typeof(ICommandHandler<TCommand>));
 
-                _busCLient.WithCommandHandlerAsync(handler);
+                _busClient.WithCommandHandlerAsync(handler);
                 return this;
             }
 
             public BusBuilder SubscribeToEvent<TEvent>() where TEvent : IEvent
             {
+
+                IServiceProvider services = _webHost.Services;
+                object service = _webHost.Services.GetService(typeof(IEventHandler<TEvent>));
+
                 IEventHandler<TEvent> handler = (IEventHandler<TEvent>)_webHost.Services
                     .GetService(typeof(IEventHandler<TEvent>));
 
-                _busCLient.WithEventHandlerAsync(handler);
+                _busClient.WithEventHandlerAsync(handler);
                 return this;
             }
 

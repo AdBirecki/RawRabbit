@@ -12,7 +12,7 @@ using Microsoft.Extensions.Options;
 using Actio.Common.RabbitMQExtensions;
 using Actio.Common.RabbitMQ;
 using Actio.Common.Events;
-using Actio.Common.Handler;
+using Actio.Api.Handler;
 
 namespace Actio.Api
 {
@@ -28,11 +28,13 @@ namespace Actio.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRabbitMQ(Configuration);
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddScoped<IEventHandler<ActivityCreated>, ActivityCreatedHandler>();
+            services
+                .AddRabbitMQ(Configuration);
+            services
+                .AddTransient<IEventHandler<ActivityCreated>, ActivityCreatedHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

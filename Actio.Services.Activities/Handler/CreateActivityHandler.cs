@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Actio.Services.Identity.Handler
+namespace Actio.Services.Activities.Handler
 {
     public class CreateActivityHandler : ICommandHandler<CreateActivity>
     {
@@ -18,7 +18,7 @@ namespace Actio.Services.Identity.Handler
 
         public async Task HandleAsync(CreateActivity command)
         {
-            Console.WriteLine($"Creating activity:{command.Name}");
+            Console.WriteLine($"Createing activity:{command.Name}");
 
             await _busClient.PublishAsync(
                 new ActivityCreated(

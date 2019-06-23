@@ -15,11 +15,7 @@ C:\Users\Adam\Source\Repos\Actio\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.Raz
 C:\Users\Adam\Source\Repos\Actio\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.csproj.CopyComplete
 C:\Users\Adam\Source\Repos\Actio\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.dll
 C:\Users\Adam\Source\Repos\Actio\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.pdb
-C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.deps.json
-C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.runtimeconfig.json
-C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.runtimeconfig.dev.json
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.dll
-C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.pdb
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Common.dll
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Common.pdb
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.csprojAssemblyReference.cache
@@ -29,6 +25,10 @@ C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Act
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.AssemblyInfoInputs.cache
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.AssemblyInfo.cs
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.RazorTargetAssemblyInfo.cache
-C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.csproj.CopyComplete
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.dll
 C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.pdb
+C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.deps.json
+C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.runtimeconfig.json
+C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.runtimeconfig.dev.json
+C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\bin\Debug\netcoreapp2.1\Actio.Api.pdb
+C:\Users\Adam\Source\Repos\Actio\RawRabbit\Actio.Api\obj\Debug\netcoreapp2.1\Actio.Api.csproj.CopyComplete

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Actio.Common.Commands;
 using Actio.Common.Events;
 using Actio.Common.Services;
 using Microsoft.AspNetCore;
@@ -16,11 +17,10 @@ namespace Actio.Services.Activities
     {
         public static void Main(string[] args)
         {
-
             ServiceHost
                 .Create<Startup>(args)
                 .UseRabbitMQ()
-                .SubscribeToEvent<ActivityCreated>()
+                .SubscribeToCommand<CreateActivity>()
                 .Build()
                 .Run();
         }

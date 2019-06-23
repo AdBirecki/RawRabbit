@@ -19,7 +19,7 @@ namespace Actio.Services.Identity
             ServiceHost
                 .Create<Startup>(args)
                 .UseRabbitMQ()
-                .SubscribeToCommand<CreateActivity>()
+                .SubscribeToCommand<CreateUser>()
                 .Build()
                 .Run();
         }
